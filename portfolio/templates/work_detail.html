@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+ <!-- Start Breadcrumb Area -->
+        <div class="axil-breadcrumb-area breadcrumb-style-default pt--170 pb--70 theme-gradient">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="inner">
+                            <ul class="axil-breadcrumb liststyle d-flex">
+                                <li class="axil-breadcrumb-item"><a href="/">Главная</a></li>
+	                            <li class="axil-breadcrumb-item"><a href="{% url 'portfolio:work_list' %}">Портфолио</a></li>
+                                <li class="axil-breadcrumb-item active" aria-current="page">{{ object }}</li>
+                            </ul>
+                            <h1 class="axil-page-title">{{ object }}</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="shape-images">
+                <i class="shape shape-1 icon icon-bcm-01"></i>
+                <i class="shape shape-2 icon icon-bcm-02"></i>
+                <i class="shape shape-3 icon icon-bcm-03"></i>
+            </div>
+        </div>
+        <!-- End Breadcrumb Area -->
+        <div class="page-wrappper">
+
+            <!-- Start Portfolio Details Area  -->
+            <div class="axil-portfolio-details ax-section-gap bg-color-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-7 col-lg-6 col-sm-12 col-12">
+                            <div class="portfolio-wrapper">
+                                <div class="section-title text-left">
+                                    <span class="sub-title extra04-color">Дизайн, программирование</span>
+                                    <h2 class="title"><span>Задача</span></h2>
+									{{ object.content|safe }}
+                                    <a class="axil-button btn-large btn-transparent" href="{{ object.link_to_site }}" target="_blank">
+                                        <span class="button-text">Запустить сайт </span><span class="button-icon"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-5 col-lg-6 col-sm-12 col-12 mt_md--40 mt_sm--40">
+                            <div class="portfolio-inner-details">
+                                <h3 class="title mb--20 md_md--10 md_sm--10">Процесс</h3>
+                                <p class="mb--35 md_md--10 md_sm--10 subtitle-2">Разработку всех наших проектов мы делим на три этапа,
+	                                чтобы заказчику и нам было удобно коммуницировать друг с другом.
+                                </p>
+                                <!-- Start Accordion Area  -->
+                                <div id="accordion" class="axil-accordion mt--15 mt_md--15 mt_sm--15">
+                                    <!-- Start Single Card  -->
+                                    <div class="card">
+                                        <div class="card-header" id="headingOne">
+                                            <h5 class="mb-0">
+                                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><i
+                                                        class="fal fa-compress-wide"></i><span>Стратегия</span>
+                                                </button>
+                                            </h5>
+                                        </div>
+
+                                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                            <div class="card-body">На этом этапе изучается тематика будущего сайта, проводится анализ
+	                                            конкурентов и составляется стратегия действий по выводу продукта в рынок.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Single Card  -->
+
+                                    <!-- Start Single Card  -->
+                                    <div class="card">
+                                        <div class="card-header" id="headingTwo">
+                                            <h5 class="mb-0">
+                                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"><i
+                                                        class="fal fa-paint-brush"></i><span>Дизайн</span>
+                                                </button>
+                                            </h5>
+                                        </div>
+                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                            <div class="card-body">На основе полученной аналитики создается максимально удобный и в то же время
+	                                            тематический дизайн для будущего проекта
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Single Card  -->
+
+                                    <!-- Start Single Card  -->
+                                    <div class="card">
+                                        <div class="card-header" id="headingThree">
+                                            <h5 class="mb-0">
+                                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"><i
+                                                        class="fal fa-code"></i><span>Программирование</span>
+                                                </button>
+                                            </h5>
+                                        </div>
+                                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                            <div class="card-body">После утверждения дизайна мы приступаем к оживлению проекта,
+	                                            а точнее к програмированию элементов сайта,
+	                                            системы администрирования и т.д.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Single Card  -->
+                                </div>
+                                <!-- End Accordion Area  -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Portfolio Details Area  -->
+
+
+
+           <!-- Start Website Link  -->
+            <div class="axil-website">
+                <div class="thumbnail text-center">
+                    <img class="light-image" src="{{ object.image.url }}" alt="Featured Images">
+                </div>
+            </div>
+            <!-- End Website Link  -->
+        </div>
+        <!-- Start Footer Area -->
+{% endblock content %}

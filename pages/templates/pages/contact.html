@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+	<!-- Start Breadcrumb Area -->
+        <div class="axil-breadcrumb-area breadcrumb-style-default pt--170 pb--70 theme-gradient">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="inner">
+                            <ul class="axil-breadcrumb liststyle d-flex">
+                                <li class="axil-breadcrumb-item"><a href="/">Главная</a></li>
+                                <li class="axil-breadcrumb-item active" aria-current="page">Контакты</li>
+                            </ul>
+                            <h1 class="axil-page-title">Контакты</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="shape-images">
+                <i class="shape shape-1 icon icon-bcm-01"></i>
+                <i class="shape shape-2 icon icon-bcm-02"></i>
+                <i class="shape shape-3 icon icon-bcm-03"></i>
+            </div>
+        </div>
+        <!-- End Breadcrumb Area -->
+
+        <main class="main-wrapper">
+
+            <!-- Start Contact Area  -->
+            <div class="axil-contact-area axil-shape-position ax-section-gap bg-color-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 col-xl-5 col-12">
+                            <div class="contact-form-wrapper">
+                                <!-- Start Contact Form -->
+                                <div class="axil-contact-form contact-form-style-1">
+                                    <h3 class="title">Узнать стоимость сайта</h3>
+
+                                    <form method="post" action="{% url 'lead:lead_create' %}">
+	                                    {%  csrf_token %}
+                                        <div class="form-group">
+                                            <input type="text" name="name"  required>
+                                            <label>Имя</label>
+                                            <span class="focus-border"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" name="email"  required>
+                                            <label>Email</label>
+                                            <span class="focus-border"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="phone"
+                                                    class="phone-field"
+											        data-rule-required="true"
+											        data-rule-minlength="10"
+											        data-msg="Введите номер телефона"
+                                                   required>
+                                            <label>Телефон</label>
+                                            <span class="focus-border"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <button class="axil-button btn-large btn-transparent w-100">
+                                                <span class="button-text">Узнать цену сайта</span><span
+                                                    class="button-icon"></span>
+                                            </button>
+                                        </div>
+                                    </form>
+
+                                </div>
+                                <!-- End Contact Form -->
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-xl-6 offset-xl-1 col-12 mt_md--40 mt_sm--40">
+                            <div class="axil-address-wrapper">
+                                <!-- Start Single Address  -->
+                                <div class="axil-address wow move-up">
+                                    <div class="inner">
+                                        <div class="icon">
+                                            <i class="fas fa-phone"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="title">Телефоны</h4>
+                                            <p>Мы работаем с Понедельника по Пятницу, с 10:00 до 18:00</p>
+                                            <p><a class="axil-link" href="tel:{{ mobile }}">{{ phone }}</a></p>
+	                                        <p><a class="axil-link" href="tel:{{ mobile }}">{{ mobile }}</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Address  -->
+                                <!-- Start Single Address  -->
+                                <div class="axil-address wow move-up mt--60 mt_sm--30 mt_md--30">
+                                    <div class="inner">
+                                        <div class="icon">
+                                            <i class="fal fa-envelope"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="title">Email</h4>
+                                            <p>Наш менеджер свяжется с вами в ближайшее время
+                                            </p>
+                                            <p><a class="axil-link" href="mailto:{{ email }}">{{ email }}</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Address  -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="shape-group">
+                    <div class="shape shape-01">
+                        <i class="icon icon-contact-01"></i>
+                    </div>
+                    <div class="shape shape-02">
+                        <i class="icon icon-contact-02"></i>
+                    </div>
+                    <div class="shape shape-03">
+                        <i class="icon icon-contact-03"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- End Contact Area  -->
+
+            <!-- Start Office Location  -->
+            <div class="axil-office-location-area ax-section-gap bg-color-lightest">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-title text-center">
+                                <span class="sub-title extra04-color wow" data-splitting>где мы</span>
+                                <h2 class="title wow mb--0" data-splitting>Наш офис</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt--30">
+
+                        <!-- Start Single Location  -->
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12 offset-4">
+                            <div class="axil-office-location mt--30 wow move-up">
+                                <div class="thumbnail">
+                                    <img src="{% static 'assets/images/inner-image/contact/contact-01.jpg' %}" alt="Location Images">
+                                </div>
+                                <div class="content">
+                                    <h4 class="title">Россия</h4>
+                                    <p>{{ address }}</p>
+                                        <a class="axil-button btn-transparent" href="https://yandex.ru/maps/?um=constructor%3A2ca2bdbdf9da74237a866994006839a90b984491a449a2ba4df99bf904624075&source=constructorLink"><span class="button-text">Посмотреть на карте</span><span class="button-icon"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Location  -->
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- End Office Location  -->
+
+
+        </main>
+{% endblock %}

@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	 <!-- Start Breadcrumb Area -->
+        <div class="axil-breadcrumb-area breadcrumb-style-default pt--170 pb--70 theme-gradient">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="inner">
+                            <ul class="axil-breadcrumb liststyle d-flex">
+                                <li class="axil-breadcrumb-item"><a href="/">Главная</a></li>
+                                <li class="axil-breadcrumb-item active" aria-current="page">Блог</li>
+                            </ul>
+                            <h1 class="axil-page-title">Блог</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="shape-images">
+                <i class="shape shape-1 icon icon-bcm-01"></i>
+                <i class="shape shape-2 icon icon-bcm-02"></i>
+                <i class="shape shape-3 icon icon-bcm-03"></i>
+            </div>
+        </div>
+        <!-- End Breadcrumb Area -->
+        <!-- Start Page Wrapper -->
+        <main class="page-wrappper">
+            <!-- Start Blog Area  -->
+            <div class="axil-blog-area ax-section-gap bg-color-white">
+                <div class="container">
+                    <div class="row row--40">
+                        <div class="col-lg-8 col-md-12 col-12">
+	                        {% for item in object_list %}
+                            <!-- Start Single Blog  -->
+                            <div class="axil-blog-list wow move-up">
+                                <div class="blog-top">
+                                    <h3 class="title"><a href="{% url 'blog:blog_detail' category_slug=item.category.slug slug=item.slug %}">{{ item }}</a></h3>
+                                    <div class="author">
+                                        <div class="info">
+                                            <h6>Админ</h6>
+                                            <ul class="blog-meta">
+                                                <li>{{ item.date_born }}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="thumbnail">
+                                    <a href="{% url 'blog:blog_detail' category_slug=item.category.slug slug=item.slug %}">
+                                        <img class="w-100" src="{{ item.image.url }}" alt="{{ item }}">
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <p>{{ item.description }}</p>
+                                    <a class="axil-button btn-large btn-transparent" href="{% url 'blog:blog_detail' category_slug=item.category.slug slug=item.slug %}"><span
+                                            class="button-text">Подробнее</span><span class="button-icon"></span></a>
+                                </div>
+                            </div>
+                            <!-- End Single Blog  -->
+	                        {% endfor %}
+
+
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-12 mt_md--40 mt_sm--40">
+                            <!-- Start Blog Sidebar  -->
+                            <div class="axil-blog-sidebar">
+
+                                <!-- Start Single Widget  -->
+                                <div class="axil-single-widget search">
+                                    <h4 class="title mb--30">Поиск</h4>
+                                    <div class="inner">
+                                        <form action="#" class="blog-search">
+                                            <input type="text" placeholder="Поиск…">
+                                            <button class="search-button"><i class="fal fa-search"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- End Single Widget  -->
+
+                                <!-- Start Single Widget  -->
+                                <div class="axil-single-widget category mt--80 mt_sm--30 mt_md--30 mt_lg--40">
+                                    <h4 class="title mb--30">Категории</h4>
+                                    <div class="inner">
+                                        <ul class="category-list">
+	                                        {% for item in category_list %}
+                                            <li><a href="{% url 'blog:category_list' slug=item.slug %}">{{ item }}</a></li>
+	                                        {% endfor %}
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- End Single Widget  -->
+
+                                <!-- Start Single Widget  -->
+                                <div class="axil-single-widget share mt--80 mt_sm--30 mt_md--30 mt_lg--40">
+                                    <div class="inner">
+                                        <div class="blog-share d-flex flex-wrap">
+                                            <span>Соц.сети:</span>
+                                            <ul class="social-list d-flex">
+                                                <li><a href="#"><i class="fab fa-vk"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Widget  -->
+
+
+                            </div>
+                            <!-- End Blog Sidebar  -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Blog Area  -->
+
+            {% include 'call.html' %}
+
+        </main>
+        <!-- End Page Wrapper -->
+
+{% endblock content %}
