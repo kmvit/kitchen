@@ -82,6 +82,7 @@
     Default Styles
 ***************************************/
 /*-- Variables --*/
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,400;0,500;0,700;1,100;1,400;1,500;1,700&display=swap');
 @import url("https://fonts.googleapis.com/css?family=DM+Sans:400,400i,500,500i,700&display=swap");
 :root {
   --color-primary: #702FFF;
@@ -466,7 +467,7 @@ body {
   line-height: 24px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Raleway", sans-serif;
   color: #757589;
   font-weight: 400;
 }
@@ -512,7 +513,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "DM Sans", sans-serif;
+  font-family: "Raleway", sans-serif;
   color: #000248;
   font-weight: 700;
 }
@@ -974,7 +975,7 @@ p:last-child {
 }
 
 .font-1 {
-  font-family: "DM Sans", sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 .font-2 {
@@ -988,7 +989,7 @@ p:last-child {
 }
 
 /*----------------------
-    Animation Css  
+    Animation Css
 -----------------------*/
 @-webkit-keyframes customOne {
   from {
@@ -1055,7 +1056,7 @@ p:last-child {
 }
 
 /*------------------------
-    Move Up Animation  
+    Move Up Animation
 ---------------------------*/
 .move-up {
   -webkit-transform: translateY(0px);
@@ -1072,7 +1073,7 @@ p:last-child {
 }
 
 /* ------------------------
-    Custom Animation 01 
+    Custom Animation 01
 ----------------------------*/
 @-webkit-keyframes headerSlideDown {
   0% {
@@ -1145,7 +1146,7 @@ p:last-child {
 }
 
 /*----------------------
-    Animated Text  
+    Animated Text
 -----------------------*/
 @-webkit-keyframes animateBorder {
   0% {
@@ -1267,7 +1268,7 @@ p:last-child {
 }
 
 /*--------------------------
-Scroll Line Animation  
+Scroll Line Animation
 ----------------------------*/
 @-webkit-keyframes line1 {
   0% {
@@ -1433,7 +1434,7 @@ Scroll Line Animation
 }
 
 /*--------------------------------
-Scroll Down Button Animation  
+Scroll Down Button Animation
 ----------------------------------*/
 @-webkit-keyframes scrollDown {
   0% {
@@ -1467,7 +1468,7 @@ Scroll Down Button Animation
 }
 
 /*======================
-    Custom Animation 
+    Custom Animation
 ========================*/
 .link-hover a {
   display: inline-block;
@@ -4719,9 +4720,9 @@ Copyright (c) 2015 Daniel Eden
  *  Utilities
 =================================*/
 /*====================================
-    Google Font  
+    Google Font
 ===================================*/
-/* 
+/*
 font-family: 'DM Sans', sans-serif;
 
 */
@@ -4744,7 +4745,7 @@ font-family: 'DM Sans', sans-serif;
 }
 
 /*===============================
-    Background Color 
+    Background Color
 =================================*/
 .bg-color-primary {
   background: #702FFF;
@@ -4819,7 +4820,7 @@ font-family: 'DM Sans', sans-serif;
 }
 
 /*===========================
-    Background Image 
+    Background Image
 =============================*/
 .bg_image--1 {
   background-image: url(../images/bg/bg-image-1.svg);
@@ -5150,7 +5151,7 @@ font-family: 'DM Sans', sans-serif;
 }
 
 /*=========================
-    Text specialized 
+    Text specialized
 ==========================*/
 .text-italic {
   font-style: italic;
@@ -5657,7 +5658,7 @@ textarea:-ms-input-placeholder {
 }
 
 /*=============================
-	Overlay styles 
+	Overlay styles
 ==============================*/
 [data-overlay],
 [data-black-overlay],
@@ -5756,7 +5757,7 @@ textarea:-ms-input-placeholder {
 }
 
 /*------------------------------
-    Scroll Up 
+    Scroll Up
 --------------------------------*/
 #scrollUp {
   width: 70px;
@@ -5868,7 +5869,7 @@ textarea:-ms-input-placeholder {
 }
 
 /*--------------------
-    Contact Form 
+    Contact Form
 ----------------------*/
 .form-message {
   margin-bottom: 0;
@@ -5886,7 +5887,7 @@ textarea:-ms-input-placeholder {
 }
 
 /*=========================
-    Section Separation 
+    Section Separation
 ==========================*/
 .letterspacing--2 {
   letter-spacing: 2px;
@@ -11251,7 +11252,7 @@ input[type="radio"] ~ label::after {
 	Header Styles
 ***************************************/
 /*=================
-Header Styles 
+Header Styles
 ===================*/
 .haeder-default {
   -webkit-transition: all 0.4s;
@@ -11329,7 +11330,7 @@ Header Styles
 }
 
 /*----------------------
-    Logo Animation  
+    Logo Animation
 -----------------------*/
 circle#icon-oval-sm,
 circle#icon-oval-lg,
@@ -11359,7 +11360,7 @@ a {
 }
 
 /*=====================
-Navigation Styles 
+Navigation Styles
 =======================*/
 ul.mainmenu {
   display: -webkit-box;
@@ -11482,7 +11483,7 @@ ul.mainmenu li.has-dropdown.active ul.axil-submenu.visible {
 }
 
 /*----------------------
-    Sidebar Nav 
+    Sidebar Nav
 -----------------------*/
 .side-nav-opened {
   position: relative;
@@ -11556,10 +11557,10 @@ ul.mainmenu li.has-dropdown.active ul.axil-submenu.visible {
 }
 
 /*--------------------------
-    Side Nav Styles 
+    Side Nav Styles
  ---------------------------*/
 .side-nav {
-  width: 60vw;
+  width: 40vw;
   height: 100vh;
   position: fixed;
   top: 0;
@@ -11794,7 +11795,7 @@ ul.mainmenu li.has-dropdown.active ul.axil-submenu.visible {
 }
 
 /*-----------------------
-    Menu Toggler 
+    Menu Toggler
 -------------------------*/
 .axil-menuToggle {
   position: relative;
@@ -11855,7 +11856,7 @@ ul.mainmenu li.has-dropdown.active ul.axil-submenu.visible {
 }
 
 /*---------------------
-    Bg Theme Color  
+    Bg Theme Color
 -----------------------*/
 .bg-theme-color .axil-menuToggle {
   background: #000248;
@@ -11866,7 +11867,7 @@ ul.mainmenu li.has-dropdown.active ul.axil-submenu.visible {
 }
 
 /*-------------------
-    Search Styles 
+    Search Styles
 ---------------------*/
 .axil-search-area {
   position: absolute;
@@ -11978,7 +11979,7 @@ ul.mainmenu li.has-dropdown.active ul.axil-submenu.visible {
 }
 
 /*-----------------------
-    Scroll Navigation  
+    Scroll Navigation
 -------------------------*/
 .axil-scroll-navigation .nav {
   position: static;
@@ -12074,7 +12075,7 @@ ul.mainmenu li.has-dropdown.active ul.axil-submenu.visible {
 }
 
 /*-----------------------------
-    Menu Bar Styles  
+    Menu Bar Styles
 -------------------------------*/
 .ax-menubar {
   display: -webkit-box;
@@ -12142,7 +12143,7 @@ ul.mainmenu li.has-dropdown.active ul.axil-submenu.visible {
 }
 
 /*----------------------------
-    Popup MObile Menu  
+    Popup MObile Menu
 ------------------------------*/
 .popup-mobile-manu {
   position: fixed;
@@ -12189,7 +12190,7 @@ ul.mainmenu li.has-dropdown.active ul.axil-submenu.visible {
 }
 
 /*----------------------------
-    Popup MObile Styles  
+    Popup MObile Styles
 ------------------------------*/
 .popup-mobile-manu .inner .mobileheader {
   top: 0;
@@ -12354,7 +12355,7 @@ ul.mainmenu li.has-dropdown.active ul.axil-submenu.visible {
 	Elements Styles
 ***************************************/
 /*======================
-    Axil Button Styles 
+    Axil Button Styles
 ========================*/
 .axil-button-group {
   margin: -10px;
@@ -12718,7 +12719,7 @@ button.axil-button.btn-solid.btn-primary-color:hover span.button-icon {
 }
 
 /* ========================
-    Slider Video Play 
+    Slider Video Play
 =========================*/
 .yu2fvl {
   z-index: 9999;
@@ -12931,14 +12932,14 @@ a.axil-link:hover::after {
 }
 
 /* ========================
-Dividers Area 
+Dividers Area
 ==========================*/
 .axil-basic-thine-line {
   border-top: 1px solid #C7C7D5;
 }
 
 /*===================
-    Social Icon 
+    Social Icon
 ====================*/
 .ft-social-share {
   margin: -5px -70px;
@@ -13022,7 +13023,7 @@ Dividers Area
 }
 
 /*------------------------
-    Social Share  
+    Social Share
 -------------------------*/
 ul.social-share {
   display: -webkit-box;
@@ -13164,7 +13165,7 @@ ul.social-share.style-rounded.bg-color--white li:hover a i {
 }
 
 /*--------------------------
-    List Of Followers  
+    List Of Followers
 ----------------------------*/
 ul.followers-list {
   margin: 0 -50px;
@@ -13276,7 +13277,7 @@ ul.followers-list li.linkedin a i {
 }
 
 /*====================
-Service Styles 
+Service Styles
 ======================*/
 .axil-service {
   margin-top: 60px;
@@ -13289,7 +13290,7 @@ Service Styles
 }
 
 /*---------------------------
-    Single Service  
+    Single Service
 ---------------------------*/
 .axil-service {
   position: relative;
@@ -13772,7 +13773,7 @@ Service Styles
 }
 
 /*------------------------------
-    Axil Service Style Two  
+    Axil Service Style Two
 -------------------------------*/
 .axil-service-two {
   margin-top: 30px;
@@ -13787,7 +13788,7 @@ Service Styles
 }
 
 /*---------------------
-Service Style Three  
+Service Style Three
 ------------------------*/
 .axil-service-style--3 .icon {
   position: relative;
@@ -13857,7 +13858,7 @@ Service Style Three
 }
 
 /*=======================
-Contact Form Style 
+Contact Form Style
 =========================*/
 .axil-contact-form.contact-form-style-1 {
   padding: 50px;
@@ -14189,7 +14190,7 @@ Contact Form Style
 }
 
 /*--------------------------
-    Axil Address Area  
+    Axil Address Area
 ----------------------------*/
 .axil-address {
   padding: 50px 50px;
@@ -14293,7 +14294,7 @@ Contact Form Style
 }
 
 /*-------------------------
-Axil Office Location  
+Axil Office Location
 ---------------------------*/
 .axil-office-location .thumbnail {
   margin-bottom: 30px;
@@ -14312,7 +14313,7 @@ Axil Office Location
 }
 
 /*------------------
-Form Message 
+Form Message
 ---------------------*/
 p.form-messege.error {
   margin-top: 20px;
@@ -14326,10 +14327,10 @@ p.form-messege.success {
 }
 
 /*=======================
-    Portfolio Styles 
+    Portfolio Styles
 =========================*/
 /*-------------------------
-Masonary Grid List 
+Masonary Grid List
 ----------------------------*/
 .mesonry-list {
   margin: 0 -22px;
@@ -14368,7 +14369,7 @@ Masonary Grid List
 }
 
 /*-----------------------------
-    Portfolio Item  
+    Portfolio Item
 ------------------------------*/
 .portfolio {
   padding: 0 22px;
@@ -14476,7 +14477,7 @@ Masonary Grid List
 }
 
 /*----------------------------------
-    Portfolio Button Styles 
+    Portfolio Button Styles
 -----------------------------------*/
 .messonry-button button {
   border: 0 none;
@@ -14564,7 +14565,7 @@ Masonary Grid List
 }
 
 /*----------------------------
-    Axil Counterup Styles 
+    Axil Counterup Styles
 -----------------------------*/
 .axil-counterup {
   height: 280px;
@@ -14768,7 +14769,7 @@ Masonary Grid List
 }
 
 /*--------------------------------
-    Axil Testimonial Styles 
+    Axil Testimonial Styles
 ----------------------------------*/
 .axil-testimonial {
   position: relative;
@@ -15061,7 +15062,7 @@ Masonary Grid List
 }
 
 /*------------------------
-    Brand Styles 
+    Brand Styles
 -------------------------*/
 .axil-brand-logo-wrapper {
   padding-left: 88px;
@@ -15194,7 +15195,7 @@ Masonary Grid List
 }
 
 /*-------------------------
-Client List  
+Client List
 --------------------------*/
 ul.client-list {
   position: relative;
@@ -15263,7 +15264,7 @@ ul.client-list li a img {
 }
 
 /*---------------------
-    Axil Blog Styles 
+    Axil Blog Styles
 ----------------------*/
 .axil-blog {
   position: relative;
@@ -15482,7 +15483,7 @@ ul.client-list li a img {
 }
 
 /*----------------------
-    Blog List Styles 
+    Blog List Styles
 ------------------------*/
 .axil-blog-list .blog-top .title {
   margin-bottom: 20px;
@@ -15701,7 +15702,7 @@ ul.client-list li a img {
 }
 
 /*----------------------------
-    Axil Call To Action 
+    Axil Call To Action
 ------------------------------*/
 .axil-call-to-action h2.title {
   margin-bottom: 40px;
@@ -15830,7 +15831,7 @@ ul.client-list li a img {
 }
 
 /*----------------------------------
-    Call To Action Style Two 
+    Call To Action Style Two
 -----------------------------------*/
 .axil-call-to-action.callaction-style-2 {
   position: relative;
@@ -16029,7 +16030,7 @@ ul.client-list li a img {
 }
 
 /*-----------------------
-Axil Case Study 
+Axil Case Study
 -------------------------*/
 .axil-case-study {
   margin-top: 60px;
@@ -16234,7 +16235,7 @@ Axil Case Study
 }
 
 /*---------------------
-    Axil Slick 
+    Axil Slick
 ----------------------*/
 .axil-featured-activation {
   position: relative;
@@ -16362,7 +16363,7 @@ Axil Case Study
 }
 
 /*------------------------
-    Axil Team Styles 
+    Axil Team Styles
 -------------------------*/
 .axil-team-area.shape-position {
   position: relative;
@@ -16619,7 +16620,7 @@ Axil Case Study
 }
 
 /*--------------------------
-    Pricing Table Styles 
+    Pricing Table Styles
 ----------------------------*/
 .axil-pricing-table-area.pricing-shape-position {
   position: relative;
@@ -16640,7 +16641,7 @@ Axil Case Study
 }
 
 /*--------------------------------
-    Start Pricing Table Style  
+    Start Pricing Table Style
 ----------------------------------*/
 .axil-pricing-table {
   position: relative;
@@ -17010,7 +17011,7 @@ Axil Case Study
 }
 
 /*-----------------------
- -Video Styles  
+ -Video Styles
 ------------------------*/
 .video-button.position-to-top {
   position: absolute;
@@ -17072,7 +17073,7 @@ a.video-btn span.triangle {
 }
 
 /*----------------------------
-    Axil Countdown Styles 
+    Axil Countdown Styles
 -----------------------------*/
 .countdown-style-1 .countbox.timer-grid > div {
   display: -webkit-box;
@@ -17157,7 +17158,7 @@ a.video-btn span.triangle {
 }
 
 /*-----------------------
-    Accordion Styles 
+    Accordion Styles
 -------------------------*/
 .axil-accordion .card {
   border: 0 none;
@@ -17223,7 +17224,7 @@ a.video-btn span.triangle {
 }
 
 /*-----------------------------
-Accourdion Style Two  
+Accourdion Style Two
 -------------------------------*/
 .axil-accordion--2 .card {
   border-radius: 0;
@@ -17359,7 +17360,7 @@ Accourdion Style Two
 
 .my_switcher ul li a {
   position: relative;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 16px;
   line-height: 22px;
   font-weight: 700;
