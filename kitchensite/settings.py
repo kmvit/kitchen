@@ -138,7 +138,7 @@ STATICFILES_DIRS = [
 STATIC_ROOT = 'static_root'
 MEDIA_ROOT = 'media'
 MEDIA_URL = '/media/'
-
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
