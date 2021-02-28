@@ -10,6 +10,8 @@ class BlogList(generic.ListView):
 	def get_context_data(self, **kwargs):
 		context = super(BlogList, self).get_context_data(**kwargs)
 		context['category_list'] = Category.objects.all()
+		context['my_title'] = 'Полезные статьи'
+		context['my_description'] = 'Полезные статьи'
 		return context
 
 
@@ -32,4 +34,7 @@ class CategoryList(generic.ListView):
 	def get_context_data(self, **kwargs):
 		context = super(CategoryList, self).get_context_data(**kwargs)
 		context['category_list'] = Category.objects.all()
+		context['my_title'] = Blog.objects.filter(category__slug=self.kwargs['slug']).first().category
+		context['my_description'] = 'Полезные статьи о ' + Blog.objects.filter(category__slug=self.kwargs['slug']).first().category.title
+
 		return context

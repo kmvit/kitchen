@@ -1,9 +1,9 @@
 {% load static %}
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>{{ object.meta_title }}</title>
+<title>{{ my_title }}{% if object.meta_title %}{{ object.meta_title }}{% else %}{{ object.title }}{% endif %}</title>
 <meta name="robots" content="noindex, follow" />
-<meta name="description" content="{{ object.meta_description }}">
+<meta name="description" content="{{ my_description }}{{ object.meta_description }}">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- Favicon -->
 <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/favicon.ico' %}">
