@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	 <!-- Start Page Wrapper -->
+        <main class="page-wrapper">
+
+            <!-- Start Breadcrumb Area -->
+            <div class="axil-breadcrumb-area breadcrumb-style-2 single-service pt--170 pb--70 theme-gradient">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 order-2 order-lg-1 mt_md--30 mt_sm--20">
+                            <div class="inner">
+                                <h2 class="title">{{ object }}</h2>
+                                <p>Встречаемся, анализируем, проектируем и уже потом программируем.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 order-1 order-lg-2">
+                            <div class="thumbnail text-left text-lg-right">
+                                <div class="image-group text-right">
+                                    <img class="image-1 paralax-image" src="{% static 'assets/images/slider/breadcrumb-4.jpg' %}" alt="Slider images">
+                                    <img class="image-2 paralax-image" src="{% static 'assets/images/slider/single-service-01.svg' %}" alt="Slider images">
+                                </div>
+                                <div class="shape-group">
+                                    <div class="shape shape-1">
+                                        <i class="icon icon-breadcrumb-1"></i>
+                                    </div>
+                                    <div class="shape shape-2">
+                                        <i class="icon icon-breadcrumb-2"></i>
+                                    </div>
+                                    <div class="shape shape-3">
+                                        <i class="icon icon-breadcrumb-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Breadcrumb Area -->
+
+            <!-- Start Project Brief  -->
+            <div class="axil-project-brief project-bief-styles ax-section-gap bg-color-white">
+                <div class="container">
+                    <div class="row align-items-center">
+
+                        <div class="col-lg-12 col-xl-10 offset-xl-1 col-md-12 col-12">
+                            <div class="content mt_md--30 mt_sm--30">
+                                <div class="inner move-up wow">
+                                    <h2 class="title mb--20">Политика конфиденциальности</h2>
+                                    <div class="mb--30">{{ object.content_one|safe }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- End Project Brief  -->
+
+
+
+
+
+
+            {% include 'call.html' %}
+        </main>
+        <!-- End Page Wrapper -->
+{% endblock content %}

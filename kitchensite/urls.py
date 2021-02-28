@@ -17,6 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.sitemaps.views import sitemap
+from pages.views import PageSiteMap
+
+sitemaps = {
+    'Pagesitemap':PageSiteMap,
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,6 +30,8 @@ urlpatterns = [
     path('portfolio/', include('portfolio.urls', namespace='portfolio')),
     path('blog/', include('blog.urls', namespace='blog')),
     path('lead/', include('leads.urls', namespace='lead')),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
+        name='django.contrib.sitemaps.views.sitemap'),
     path('', include('pages.urls', namespace='pages')),
     ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

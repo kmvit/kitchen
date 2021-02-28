@@ -1,5 +1,7 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+from django.urls import reverse
+
 from portfolio.models import WORK_CATEGORY
 
 TEMPLATES = (
@@ -8,6 +10,7 @@ TEMPLATES = (
 	('reklama.html', 'reklama.html'),
 	('seo.html', 'seo.html'),
 	('develop.html', 'develop.html'),
+	('just-text.html', 'just-text.html'),
 )
 
 
@@ -40,6 +43,9 @@ class Page(BasePage):
 
 	def __str__(self):
 		return self.title
+
+	def get_absolute_url(self):
+		return reverse('pages:page', kwargs={'slug': self.slug})
 
 
 class ContactInformation(models.Model):

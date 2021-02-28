@@ -3,7 +3,7 @@ from django.views import generic
 from .models import Page
 from portfolio.models import Work
 from blog.models import Blog
-
+from django.contrib.sitemaps import Sitemap
 
 
 class HomePage(generic.DetailView):
@@ -29,7 +29,7 @@ class PageView(generic.DetailView):
 
 	def get_context_data(self, **kwargs):
 		context = super(PageView, self).get_context_data(**kwargs)
-		context['work_list'] = Work.objects.filter(category=self.object.portfolio)
+		context['work_list'] = Work.objects.filter(category=self.object.portfolio)[:3]
 		return context
 
 
@@ -41,4 +41,9 @@ class ContactView(generic.DetailView):
 
 
 
+class PageSiteMap(Sitemap):
+	changefreq = "never"
+	priority = 0.5
 
+	def items(self):
+		return Page.objects.all()
