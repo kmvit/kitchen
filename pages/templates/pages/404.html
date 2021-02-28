@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+	<main class="page-wrapper page-error">
+            <!-- Start Page Error Area  -->
+            <div class="axil-error-not-found fullscreen d-flex align-items-center theme-gradient-7 list-active">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="axil-error text-center">
+                                <div class="inner">
+                                    <h1 class="title mb--20">Страница не найдена</h1>
+                                    <p class="subtitle-2 mb--30">Извините но данной страницы не существует, <br /> может ее перенесли в другое место?</p>
+                                        <a class="axil-button btn-large btn-transparent" href="/"><span
+                                            class="button-text">Go Back</span><span class="button-icon"></span></a>
+                                        <img class="text-image" src="{% static 'assets/images/others/404.svg' %}" alt="404 Images">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="shape-group">
+                    <div class="shape shape-01">
+                        <img src="{% static 'assets/images/shape/404-01.svg' %}" alt="Shape Images">
+                    </div>
+                    <div class="shape shape-02">
+                        <img src="{% static 'assets/images/shape/404-01.svg' %}" alt="Shape Images">
+                    </div>
+                    <div class="shape shape-03">
+                        <img src="{% static 'assets/images/shape/404-02.svg' %}" alt="Shape Images">
+                    </div>
+                    <div class="shape shape-04">
+                        <img src="{% static 'assets/images/shape/404-03.svg'%}" alt="Shape Images">
+                    </div>
+                </div>
+            </div>
+            <!-- End Page Error Area  -->
+        </main>
+{% endblock %}
