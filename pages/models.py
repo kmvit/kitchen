@@ -7,6 +7,7 @@ TEMPLATES = (
 	('home.html', 'home.html'),
 	('reklama.html', 'reklama.html'),
 	('seo.html', 'seo.html'),
+	('develop.html', 'develop.html'),
 )
 
 

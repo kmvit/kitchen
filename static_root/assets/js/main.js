@@ -196,7 +196,7 @@
 
         scrollTop: function () {
             $.scrollUp({
-                scrollText: '<span class="text">top</span>',
+                scrollText: '<span class="text"></span>',
                 easingType: 'linear',
                 scrollSpeed: 900,
                 animation: 'slide'

@@ -1,0 +1,426 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	 <!-- Start Page Wrapper -->
+        <main class="page-wrapper">
+
+            <!-- Start Breadcrumb Area -->
+            <div class="axil-breadcrumb-area breadcrumb-style-2 single-service pt--170 pb--70 theme-gradient">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 order-2 order-lg-1 mt_md--30 mt_sm--20">
+                            <div class="inner">
+                                <h2 class="title">{{ object }}</h2>
+                                <p>Встречаемся, анализируем, проектируем и уже потом программируем.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 order-1 order-lg-2">
+                            <div class="thumbnail text-left text-lg-right">
+                                <div class="image-group text-right">
+                                    <img class="image-1 paralax-image" src="{% static 'assets/images/slider/breadcrumb-4.jpg' %}" alt="Slider images">
+                                    <img class="image-2 paralax-image" src="{% static 'assets/images/slider/single-service-01.svg' %}" alt="Slider images">
+                                </div>
+                                <div class="shape-group">
+                                    <div class="shape shape-1">
+                                        <i class="icon icon-breadcrumb-1"></i>
+                                    </div>
+                                    <div class="shape shape-2">
+                                        <i class="icon icon-breadcrumb-2"></i>
+                                    </div>
+                                    <div class="shape shape-3">
+                                        <i class="icon icon-breadcrumb-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Breadcrumb Area -->
+
+            <!-- Start Project Brief  -->
+            <div class="axil-project-brief project-bief-styles ax-section-gap bg-color-white">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-xl-6 col-md-12 col-12">
+                            <div class="thumbnail position-relative">
+                                <img class="image w-100 paralax-image" src="{% static 'assets/images/about/case-study-video.jpg'%}" alt="Featured Images">
+
+                                <div class="shape-group shape-01">
+                                    <img src="{% static 'assets/images/others/contact-01.svg' %}" alt="{{ object }}">
+                                </div>
+                                <div class="shape-group shape-02">
+                                    <img src="{% static 'assets/images/others/contact-03.svg' %}" alt="{{ object }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-xl-5 offset-xl-1 col-md-12 col-12">
+                            <div class="content mt_md--30 mt_sm--30">
+                                <div class="inner move-up wow">
+                                    <h2 class="title mb--20">Зачем нужен сайт?</h2>
+                                    <div class="mb--30">{{ object.content_one|safe }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- End Project Brief  -->
+
+            <!-- Start Project Brief  -->
+            <div class="axil-project-brief project-bief-styles order-style-2 ax-section-gap bg-color-lightest">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-xl-5 col-md-12 col-12 order-2 order-lg-1 mt_md--30 mt_sm--30">
+                            <div class="content">
+                                <div class="inner move-up wow">
+                                    <h2 class="title mb--20">Что вы получаете заказав сайт у нас</h2>
+                                    <div class="mb--30">
+	                                    {{ object.content_two|safe }}
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-xl-6 offset-xl-1 col-md-12 col-12 order-1 order-lg-2">
+                            <div class="thumbnail position-relative">
+                                <img class="image w-100 paralax-image" src="{% static 'assets/images/about/case-stydy-02.jpg' %}" alt="Featured Images">
+                                <div class="shape-group shape-01">
+                                    <img src="{% static 'assets/images/others/contact-01.svg' %}" alt="Описание создания">
+                                </div>
+                                <div class="shape-group shape-02">
+                                    <img src="{% static 'assets/images/others/contact-03.svg' %}" alt="Описание создания-2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- End Project Brief  -->
+
+	        <!-- Start About Area  -->
+            <div class="axil-about-area ax-section-gap bg-color-white" id="call">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-xl-5 col-md-12 col-12">
+                            <div class="contact-form-wrapper">
+                                <!-- Start Contact Form -->
+                                <div class="axil-contact-form contact-form-style-1">
+                                    <h3 class="title">Узнать стоимость сайта</h3>
+                                    <form method="post" action="{% url 'lead:lead_create' %}">
+	                                    {%  csrf_token %}
+                                        <div class="form-group">
+                                            <input type="text" name="name"  required>
+                                            <label>Имя</label>
+                                            <span class="focus-border"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" name="email"  required>
+                                            <label>Email</label>
+                                            <span class="focus-border"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="phone"
+                                                    class="phone-field"
+											        data-rule-required="true"
+											        data-rule-minlength="10"
+											        data-msg="Введите номер телефона"
+                                                   required>
+                                            <label>Телефон</label>
+                                            <span class="focus-border"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <button class="axil-button btn-large btn-transparent w-100">
+                                                <span class="button-text">Узнать цену сайта</span><span
+                                                    class="button-icon"></span>
+                                            </button>
+                                        </div>
+                                    </form>
+                                    <div class="callto-action-wrapper text-center">
+                                        <span class="text">или позвоните нам</span>
+                                        <span><i class="fal fa-phone-alt"></i> <a href="{{ phone }}">{{ phone }}</a></span>
+                                    </div>
+                                    <!-- Start Shape Group  -->
+                                    <div class="shape-group">
+                                        <div class="shape shape-01">
+                                            <i class="icon icon-shape-07"></i>
+                                        </div>
+                                        <div class="shape shape-02">
+                                            <i class="icon icon-shape-16"></i>
+                                        </div>
+                                    </div>
+                                    <!-- End Shape Group  -->
+                                </div>
+                                <!-- End Contact Form -->
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-xl-5 offset-xl-2 col-md-12 col-12 mt_md--40 mt_sm--40">
+                            <div class="axil-about-inner">
+                                <div class="section-title text-left">
+                                    <span class="sub-title extra08-color">вот вопрос</span>
+                                    <h2 class="title">С чего начать?</h2>
+                                        <div class="subtitle-2 mb--30 move-up wow">
+	                                    <p>Звоните или пишите, мы договариваемся о встрече. После обсуждения деталей мы состовляем техническое задание
+		                                    на {{ object.title }}. После вы вносите предоплату в размере 50% процентов от стоимости сайта
+		                                    и мы приступаем к поэтапной разработке проекта. Вы можете узнать на каком этапе сейчас разработка,
+		                                    позвонив по телефону
+		                                    <a href="tel:{{ mobile }}">{{ mobile }}</a>.</p>
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End About Area  -->
+
+
+
+            <!-- Start Working Process  -->
+            <div class="axil-working-process-area ax-section-gap theme-gradient-4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-title text-center mb--100 mb_sm--40 mb_md--40">
+                                <h2 class="title wow" data-splitting>Процесс создания сайта</h2>
+                                <p class="subtitle-2 wow" data-splitting>Ниже мы кратко описали процесс работы при создании проекта</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- Start Working Process  -->
+                            <div class="axil-working-process mb--100 mb_md--50 mb_sm--40">
+                                <div class="thumbnail">
+                                    <div class="image paralax-image">
+                                        <img src="{% static 'assets/images/process/process-01.jpg' %}" alt="Этап 1">
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <div class="inner">
+                                        <div class="section-title">
+                                            <span class="process-step-number">1</span>
+                                            <span class="sub-title extra04-color">первый этап</span>
+                                            <h2 class="title">Анализ</h2>
+                                            <p class="subtitle-2">Наши специалисты проводят детальный анализ вашего сайта и
+	                                            ищут подходящую целевую аудиторию. Исходя из этого и будет создаваться дизайн.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Working Process  -->
+
+                            <!-- Start Working Process  -->
+                            <div class="axil-working-process mb--100 text-left mb_md--50 mb_sm--40">
+                                <div class="content order-2 order-lg-1">
+                                    <div class="inner">
+                                        <div class="section-title">
+                                            <span class="process-step-number">2</span>
+                                            <span class="sub-title extra05-color">второй этап</span>
+                                            <h2 class="title">Дизайн</h2>
+                                            <p class="subtitle-2">Создание дизайна сайта происходит на основе анализа целевой аудитории,
+	                                            фирменного стиля, так же в учет берется тематика сайта.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="thumbnail order-1 order-lg-2">
+                                    <div class="image paralax-image">
+                                        <img src="{% static 'assets/images/process/process-02.jpg' %}" alt="Process Images">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Working Process  -->
+
+                            <!-- Start Working Process  -->
+                            <div class="axil-working-process mb--100 mb_md--50 mb_sm--40">
+                                <div class="thumbnail">
+                                    <div class="image paralax-image">
+                                        <img src="{% static 'assets/images/process/process-03.jpg' %}" alt="Process Images">
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <div class="inner">
+                                        <div class="section-title">
+                                            <span class="process-step-number">3</span>
+                                            <span class="sub-title extra06-color">третий этап</span>
+                                            <h2 class="title">Программирование</h2>
+                                            <p class="subtitle-2">На этом этапе разработки сайта происходит
+	                                            программирование и верстка (дизайн переносят в систему управления сайтом)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Working Process  -->
+
+                            <!-- Start Working Process  -->
+                            <div class="axil-working-process text-left mb--100 mb_md--50 mb_sm--40">
+                                <div class="content order-2 order-lg-1">
+                                    <div class="inner">
+                                        <div class="section-title">
+                                            <span class="process-step-number">4</span>
+                                            <span class="sub-title extra07-color">четвертый этап</span>
+                                            <h2 class="title">Тестирование</h2>
+                                            <p class="subtitle-2">Обязательное условие работы с нами это то, что мы осуществляем тестирование и
+	                                            поддержку всех своих сайтов, поэтому вам не придется переживать об этом.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="thumbnail order-1 order-lg-2">
+                                    <div class="image paralax-image">
+                                        <img src="{% static 'assets/images/process/process-04.jpg' %}" alt="Process Images">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Working Process  -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Working Process  -->
+
+	        <!-- Start Portfolio Area -->
+            <div class="axil-portfolio-area ax-section-gap ">
+                <div class="container axil-masonary-wrapper">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="section-title text-center">
+                                <span class="sub-title extra07-color wow" data-splitting>наши проекты</span>
+                                <h2 class="title wow mb--0" data-splitting>Некоторые проекты</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="mesonry-list grid-metro3 mt--20">
+	                            {% for item in work_list %}
+                                <!-- Start Single Portfolio -->
+                                <div class="portfolio portfolio_style--1 axil-control active portfolio-33-33 cat--1 cat--2">
+                                    <div class="inner move-up wow">
+                                        <div class="thumb wow paralax-image">
+                                            <a href="{% url 'portfolio:work_detail' slug=item.slug %}"><img src="{{ item.preview_image.url }}" alt="{{ item }}"></a>
+                                        </div>
+                                        <div class="port-overlay-info">
+                                            <div class="hover-action">
+                                                <h4 class="title"><a href="{% url 'portfolio:work_detail' slug=item.slug %}">{{ item }}</a></h4>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Portfolio -->
+	                            {% endfor %}
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Portfolio Area -->
+
+            <!-- Start Pricing Table Area -->
+            <div class="axil-pricing-table-area pricing-shape-position ax-section-gap bg-color-lightest">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-title text-center">
+                                <span class="sub-title extra04-color wow" data-splitting>тарифы</span>
+                                <h2 class="title wow" data-splitting>Стоимость услуги {{ object.title }}</h2>
+                                <p class="subtitle-2 wow" data-splitting>Мы есть две схемы работы и они отличаются по времени о цене. Ниже в таблице вы
+                                можете ознакомится с этими вариантами.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt--20 row--30 mt_sm--0">
+                        <!-- Start Single pricing table -->
+                        <div class="col-lg-5 col-md-6 col-sm-12 col-12 offset-lg-1">
+                            <div class="axil-pricing-table mt--40 active move-up wow">
+                                <div class="axil-pricing-inner">
+                                    <div class="pricing-header">
+                                        <h4>Шаблоннный</h4>
+                                        <p>Красивый и простой сайт</p>
+                                        <div class="price-wrapper">
+                                            <div class="price">
+	                                            <span>от</span>
+                                                <h2 class="heading headin-h3">{{ object.price_base }} </h2>
+	                                            <span>рублей</span>
+                                            </div>
+
+                                        </div>
+                                        <div class="pricing-get-button">
+                                            <a class="axil-button btn-large btn-transparent" href="#call"><span class="button-text">Заказать сейчас</span><span class="button-icon"></span></a>
+                                        </div>
+                                        <span class="subtitle">Гарантия возврата денег</span>
+                                    </div>
+                                    <div class="pricing-body">
+                                        <div class="inner">
+                                            <ul class="list-style">
+                                                <li>Шаблон на выбор</li>
+                                                <li>Панель управления</li>
+                                                <li>Хостинг на 3 месяца</li>
+                                                <li>Базовая SEO оптимизация</li>
+                                                <li>Почтовый ящик</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single pricing table -->
+
+                        <!-- Start Single pricing table -->
+                        <div class="col-lg-5 col-md-6 col-sm-12 col-12">
+                            <div class="axil-pricing-table mt--40 mt_sm--60 move-up wow">
+                                <div class="axil-pricing-inner">
+                                    <div class="pricing-header">
+                                        <h4>Индивидуальный</h4>
+                                        <p>Красивый и совсем не простой сайт</p>
+                                        <div class="price-wrapper">
+                                            <div class="price">
+	                                            <span>от</span>
+                                                <h2 class="heading headin-h3">{{ object.price_pro }} </h2>
+	                                            <span>рублей</span>
+                                            </div>
+
+                                        </div>
+                                        <div class="pricing-get-button">
+                                            <a class="axil-button btn-large btn-transparent" href="#call"><span class="button-text">Заказать сейчас</span><span class="button-icon"></span></a>
+                                        </div>
+                                        <span class="subtitle">Гарантия возврата денег</span>
+                                    </div>
+                                    <div class="pricing-body">
+                                        <div class="inner">
+                                            <ul class="list-style">
+                                                <li>Уникальный дизайн</li>
+                                                <li>Функционал</li>
+                                                <li>Домен и хостинг на 1 год</li>
+                                                <li>Копирайтинг</li>
+                                                <li>Метрика и аналитика</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single pricing table -->
+                    </div>
+                </div>
+                <div class="shape-group">
+                    <div class="shape">
+                        <i class="icon icon-shape-15"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- End Pricing Table Area -->
+
+
+            {% include 'call.html' %}
+        </main>
+        <!-- End Page Wrapper -->
+{% endblock content %}
