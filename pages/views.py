@@ -47,3 +47,5 @@ class PageSiteMap(Sitemap):
 
 	def items(self):
 		return Page.objects.all()
+
+
