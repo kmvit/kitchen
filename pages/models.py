@@ -25,6 +25,7 @@ class BasePage(models.Model):
 
 
 class Page(BasePage):
+	html = models.TextField(blank=True, null=True, verbose_name='Html код')
 	content_one = RichTextField(blank=True, null=True, verbose_name='Для кого подойдет')
 	content_two = RichTextField(blank=True, null=True, verbose_name='Что получаете при заказе')
 	portfolio = models.CharField(max_length=50, choices=WORK_CATEGORY, default=1, verbose_name='Какую категорию работ выводить')
