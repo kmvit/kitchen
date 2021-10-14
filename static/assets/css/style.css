@@ -577,8 +577,8 @@ h1 {
 }
 
 h1.axil-display-1 {
-  font-size: 80px;
-  line-height: 90px;
+  font-size: 70px;
+  line-height: 60px;
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1599px) {
