@@ -16,7 +16,7 @@ class HomePage(generic.DetailView):
 
 	def get_context_data(self, **kwargs):
 		context = super(HomePage, self).get_context_data(**kwargs)
-		context['work_list'] = Work.objects.all()[:6][::-1]
+		context['work_list'] = Work.objects.filter(show_on_home=True)
 		context['blog_list'] = Blog.objects.all()[:2]
 		return context
 

@@ -4,8 +4,7 @@ from ckeditor.fields import RichTextField
 # Create your models here.
 
 WORK_CATEGORY = (
-	('visitka','Сайт визитка'),
-	('coop','Корпоративный сайт'),
+	('visitka','Многостраничник'),
 	('shop','Интернет-магазин'),
 	('landing','Лэндинг'),
 )
@@ -19,6 +18,7 @@ class Work(models.Model):
 	content = RichTextField(verbose_name='Описание')
 	link_to_site = models.CharField(max_length=100, blank=True, verbose_name='Ссылка на сайт')
 	category = models.CharField(max_length=50, choices=WORK_CATEGORY, default=1, blank=True, verbose_name='Категория сайта')
+	show_on_home = models.BooleanField(default=0, verbose_name='Показывать на главной')
 
 	class Meta:
 		verbose_name = 'Работу'

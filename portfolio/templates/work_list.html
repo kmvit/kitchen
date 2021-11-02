@@ -32,6 +32,7 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -47,6 +48,14 @@
                                 <h2 class="title wow mb--0" data-splitting>Несколько наших работ.</h2>
                             </div>
                         </div>
+                        <div class="col-lg-7 col-md-12">
+                            <div class="messonry-button text-left text-lg-right">
+                                <button data-filter="*" class="is-checked"><span class="filter-text">Все</span></button>
+                                <button data-filter=".shop" class=""><span class="filter-text">Магазин</span></button>
+                                <button data-filter=".visitka" class=""><span class="filter-text">Многостраничник</span></button>
+                                <button data-filter=".landing" class=""><span class="filter-text">Лендинг</span></button>
+                            </div>
+                        </div>
 
                     </div>
                     <div class="row">
@@ -54,7 +63,7 @@
                             <div class="mesonry-list grid-metro3 mt--20">
 	                            {% for item in object_list %}
                                 <!-- Start Single Portfolio -->
-                                <div class="portfolio portfolio_style--1 axil-control active portfolio-33-33">
+                                <div class="portfolio portfolio_style--1 axil-control active portfolio-33-33 {{ item.category }}">
                                     <div class="inner move-up wow">
                                         <div class="thumb paralax-image">
                                             <a href="{% url 'portfolio:work_detail' slug=item.slug %}"><img src="{{ item.preview_image.url }}" alt="{{ item }}"></a>
