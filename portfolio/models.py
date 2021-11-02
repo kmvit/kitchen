@@ -23,6 +23,7 @@ class Work(models.Model):
 	class Meta:
 		verbose_name = 'Работу'
 		verbose_name_plural = 'Портфолио'
+		ordering = ['-pk']
 
 
 	def __str__(self):
