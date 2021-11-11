@@ -11,6 +11,7 @@ TEMPLATES = (
 	('seo.html', 'seo.html'),
 	('develop.html', 'develop.html'),
 	('just-text.html', 'just-text.html'),
+	('bot.html', 'bot.html'),
 )
 
 
