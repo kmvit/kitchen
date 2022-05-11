@@ -1,0 +1,114 @@
+@font-face {
+  font-family: 'alabicon';
+  src:  url('fonts/alabicon.eot?e03p6k');
+  src:  url('fonts/alabicon.eot?e03p6k#iefix') format('embedded-opentype'),
+    url('fonts/alabicon.ttf?e03p6k') format('truetype'),
+    url('fonts/alabicon.woff?e03p6k') format('woff'),
+    url('fonts/alabicon.svg?e03p6k#alabicon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="alab-"], [class*=" alab-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'alabicon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.alab-horizontal-drag:before {
+  content: "\e91c";
+}
+.alab-art-brush:before {
+  content: "\e916";
+}
+.alab-brush-stroke:before {
+  content: "\e917";
+}
+.alab-paint-brush:before {
+  content: "\e918";
+}
+.alab-paintbrush-1:before {
+  content: "\e919";
+}
+.alab-paintbrush-and-palette:before {
+  content: "\e91a";
+}
+.alab-pencil:before {
+  content: "\e91b";
+}
+.alab-speech-bubble-and-three-dots:before {
+  content: "\e915";
+}
+.alab-Analyzeloop:before {
+  content: "\e906";
+}
+.alab-Core:before {
+  content: "\e90b";
+}
+.alab-Mobilepay:before {
+  content: "\e90c";
+}
+.alab-Paperdesk:before {
+  content: "\e912";
+}
+.alab-Solarsystem:before {
+  content: "\e913";
+}
+.alab-Statsincrease:before {
+  content: "\e914";
+}
+.alab-phone:before {
+  content: "\e90a";
+}
+.alab-mail:before {
+  content: "\e909";
+}
+.alab-support-speech:before {
+  content: "\e908";
+}
+.alab-folder:before {
+  content: "\e907";
+}
+.alab-user:before {
+  content: "\e90d";
+}
+.alab-trophy:before {
+  content: "\e90e";
+}
+.alab-shuffle-arrows:before {
+  content: "\e90f";
+}
+.alab-bookmark:before {
+  content: "\e910";
+}
+.alab-writing-notes:before {
+  content: "\e911";
+}
+.alab-threed-studio:before {
+  content: "\e900";
+}
+.alab-app-development:before {
+  content: "\e901";
+}
+.alab-creative-process:before {
+  content: "\e902";
+}
+.alab-software:before {
+  content: "\e903";
+}
+.alab-ux-ui:before {
+  content: "\e904";
+}
+.alab-web-developing:before {
+  content: "\e905";
+}
+
