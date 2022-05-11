@@ -32,7 +32,7 @@ class OrderAddForm(ModelForm):
             ),
 
             ButtonHolder(
-                Submit('submit', 'обавить', css_class='button white')
+                Submit('submit', 'Добавить', css_class='button white')
             )
         )
 
@@ -191,3 +191,19 @@ class CostsForm(ModelForm):
         model = Costs
         fields='__all__'
         exclude = ['deal']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.layout = Layout(
+            Fieldset(
+                'Чтобы отследить расходы на проект',
+                'title',
+                'born',
+                'price',
+            ),
+
+            ButtonHolder(
+                Submit('submit', 'Добавить', css_class='button white')
+            )
+        )
