@@ -1,0 +1,81 @@
+{% extends 'srm/base.html' %}
+{% block content %}
+<div class="col-sm-12 col-md-12">
+<div class="panel panel-bd lobidisable">
+   <div class="panel-heading">
+      <div class="btn-group" id="buttonexport">
+         <a href="#">
+            <h4>{{contact}}</h4>
+         </a>
+      </div>
+   </div>
+   <div class="panel-body">
+      <!-- Plugin content:powerpoint,txt,pdf,png,word,xl -->
+      <div class="btn-group">
+         <div class="buttonexport">
+            <a href="{% url 'orders:order_add' %}" class="btn btn-add"><i class="fa fa-plus"></i> Добавить сделку</a>
+         </div>
+      </div>
+      <!-- ./Plugin content:powerpoint,txt,pdf,png,word,xl -->
+      <div class="table-responsive">
+         <table id="dataTableExample1" class="table table-bordered table-striped table-hover">
+            <thead>
+               <tr class="info">
+                  <th>Имя</th>
+                  <th>Фирма</th>
+                  <th>Телефон</th>
+                  <th>Почта</th>
+                  <th>Сайт</th>
+                  <th>Город</th>
+                  <th>Операции</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td>{{contact}}</td>
+                  <td>{{contact.company}}</td>
+                  <td>{{contact.phone}}</td>
+                  <td>{{contact.email}}</td>
+                  <td>{{contact.site}}</td>
+                  <td>{{contact.city}}</td>
+                  <td>
+                     <a class="btn btn-add btn-xs" href="{% url 'orders:contact_edit' pk=contact.id %}"><i class="fa fa-pencil"></i></a>
+                     <a class="btn btn-danger btn-xs" href="{% url 'orders:contact_delete' pk=contact.id %}"><i class="fa fa-trash-o"></i> </a>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+
+   </div>
+</div>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 lobipanel-parent-sortable ">
+                     <div class="panel panel-bd lobidisable lobipanel" >
+                        <div class="panel-heading ui-sortable-handle">
+                           <div class="panel-title" style="max-width: calc(100% - 90px);">
+                              <h4>Заказы</h4>
+                           </div>
+                        <div class="dropdown">
+
+                          <div class="dropdown-toggle" data-toggle="dropdown"><span class="panel-control-icon glyphicon glyphicon-cog"></span></div></div></div>
+
+                        <div class="panel-body">
+                          {% for item in deal_list %}
+                           <div class="work-touchpoint">
+                              <div class="work-touchpoint-date">
+                                 <span class="day">{{item.born|date:"d"}}</span>
+                                 <span class="month">{{item.born|date:"M"}}</span>
+                              </div>
+                           </div>
+                           <div class="detailswork">
+                              <span class="label {{item.stage.label}} pull-right">{{item.stage}}</span>
+                              <a href="{% url 'orders:order_detail' pk=item.id %}" title="headings">{{item}}</a> <br>
+                              <p>{{item.budget}} рублей.</p>
+                           </div>
+                            {% endfor %}
+                            <p>Общая сумма: {{sum.total_sum}} рублей</p>
+                        </div>
+                     </div>
+                  </div>
+{% endblock %}

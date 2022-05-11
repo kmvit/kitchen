@@ -1,0 +1,52 @@
+{% extends 'srm/base.html' %}
+{% block content %}
+<div class="col-sm-12 col-md-12">
+<div class="panel panel-bd lobidisable">
+   <div class="panel-heading">
+      <div class="btn-group" id="buttonexport">
+         <a href="#">
+            <h4>Клиенты</h4>
+         </a>
+      </div>
+   </div>
+   <div class="panel-body">
+      <!-- Plugin content:powerpoint,txt,pdf,png,word,xl -->
+      <div class="btn-group">
+         <div class="buttonexport">
+            <a href="{% url 'orders:contact_add'  %}" class="btn btn-add"><i class="fa fa-plus"></i> Добавить клиента</a>
+         </div>
+      </div>
+
+      <!-- ./Plugin content:powerpoint,txt,pdf,png,word,xl -->
+      <div class="table-responsive">
+         <table id="dataTableExample1" class="table table-bordered table-striped table-hover">
+            <thead>
+               <tr class="info">
+                  <th>Имя</th>
+                  <th>Компания</th>
+                  <th>Телефон</th>
+                  <th>Почта</th>
+                  <th>Операции</th>
+               </tr>
+            </thead>
+            <tbody>
+               {% for item in contact_list %}
+               <tr>
+                  <td><a href="{% url 'orders:contact_detail' pk=item.id %}">{{item}}</a></td>
+                  <td>{{item.company}}</td>
+                  <td>{{item.phone}}</td>
+                  <td>{{item.email}}</td>
+                  <td>
+                     <a class="btn btn-add btn-xs" href="{% url 'orders:contact_edit' pk=item.id %}"><i class="fa fa-pencil"></i></a>
+                     <a class="btn btn-danger btn-xs" href="{% url 'orders:contact_delete' pk=item.id %}"><i class="fa fa-trash-o"></i> </a>
+                  </td>
+               </tr>
+               {% endfor %}
+            </tbody>
+
+         </table>
+      </div>
+   </div>
+</div>
+</div>
+{% endblock %}

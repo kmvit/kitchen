@@ -1,0 +1,249 @@
+{% extends 'srm/base.html' %}
+{% block content %}
+<div class="row">
+   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+      <div id="cardbox1">
+         <div class="statistic-box">
+            <i class="fa fa-user-plus fa-3x"></i>
+            <div class="counter-number pull-right">
+               <span class="count-number">{{contact_count}}</span>
+               <span class="slight"><i class="fa fa-play fa-rotate-270"> </i>
+               </span>
+            </div>
+            <h3> Активных клиентов</h3>
+         </div>
+      </div>
+   </div>
+   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+      <div id="cardbox2">
+         <div class="statistic-box">
+            <i class="fa fa-user-secret fa-3x"></i>
+            <div class="counter-number pull-right">
+               <span class="count-number">1</span>
+               <span class="slight"><i class="fa fa-play fa-rotate-270"> </i>
+               </span>
+            </div>
+            <h3>  Админов</h3>
+         </div>
+      </div>
+   </div>
+   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+      <div id="cardbox3">
+         <div class="statistic-box">
+            <i class="fa fa-money fa-3x"></i>
+            <div class="counter-number pull-right">
+               <i class="ti ti-money"></i><span class="count-number">{{sum.total_sum}}</span>
+               <span class="slight"><i class="fa fa-play fa-rotate-270"> </i>
+               </span>
+            </div>
+            <h3>Сумма заказов</h3>
+         </div>
+      </div>
+   </div>
+   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+      <div id="cardbox4">
+         <div class="statistic-box">
+            <i class="fa fa-files-o fa-3x"></i>
+            <div class="counter-number pull-right">
+               <span class="count-number">{{deal_count}}</span>
+               <span class="slight"><i class="fa fa-play fa-rotate-270"> </i>
+               </span>
+            </div>
+            <h3> Всего проектов</h3>
+         </div>
+      </div>
+   </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 lobipanel-parent-sortable " data-lobipanel-child-inner-id="e92WfBScvU">
+       <div class="panel panel-bd lobidisable lobipanel" data-inner-id="e92WfBScvU" data-index="0">
+          <div class="panel-heading ui-sortable-handle">
+             <div class="panel-title" style="max-width: calc(100% - 90px);">
+                <h4>Deadline задачи</h4>
+             </div>
+          <div class="dropdown"><ul class="dropdown-menu dropdown-menu-right"><li><a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-move"></i><span class="control-title">Unpin</span></a></li><li><a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-minus"></i><span class="control-title">Minimize</span></a></li><li><a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-fullscreen"></i><span class="control-title">Fullscreen</span></a></li></ul><div class="dropdown-toggle" data-toggle="dropdown"><span class="panel-control-icon glyphicon glyphicon-cog"></span></div></div></div>
+          <div class="panel-body">
+              {% for item in task_list %}
+             <div class="work-touchpoint">
+                <div class="work-touchpoint-date">
+                   <span class="day">{{item.born|date:"d"}}</span>
+                   <span class="month">{{item.born|date:"M"}}</span>
+                </div>
+             </div>
+             <div class="detailswork">
+                <span class="label-custom label label-default pull-right">{{item.deal.kindofwork}}</span>
+                <a href="#" title="headings">{{item.title}}</a> <br>
+                <p>{{item.deal}}</p>
+             </div>
+             {% endfor %}
+          </div>
+       </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" >
+       <div class="panel panel-bd lobidisable lobipanel">
+          <div class="panel-heading">
+             <div class="panel-title" style="max-width: calc(100% - 90px);">
+                <h4>Проекты в работе</h4>
+             </div>
+          <div class="dropdown"><ul class="dropdown-menu dropdown-menu-right"><li><a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-move"></i><span class="control-title">Unpin</span></a></li><li><a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-minus"></i><span class="control-title">Minimize</span></a></li><li><a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-fullscreen"></i><span class="control-title">Fullscreen</span></a></li></ul><div class="dropdown-toggle" data-toggle="dropdown"><span class="panel-control-icon glyphicon glyphicon-cog"></span></div></div></div>
+          <div class="panel-body">
+              {% for item in deal_list %}
+             <div class="runnigwork">
+                 <span class="label {{item.stage.label}} label label-default pull-right">{{item.stage}}</span>
+                <i class="fa fa-dot-circle-o"></i>
+                <a href="{% url 'orders:order_detail' pk=item.id %}">{{item}}</a><br>
+                <div class="progress runningprogress">
+                   <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="" data-original-title="25%"></div>
+                </div>
+             </div>
+             {% endfor %}
+          </div>
+       </div>
+    </div>
+ </div>
+ <!-- Modal1 -->
+ <div class="modal fade" id="addtask" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+       <div class="modal-content">
+          <div class="modal-header modal-header-primary">
+             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+             <h3><i class="fa fa-plus m-r-5"></i> add new task</h3>
+          </div>
+          <div class="modal-body">
+             <div class="row">
+                <div class="col-md-12">
+                   <form class="form-horizontal">
+                      <fieldset>
+                         <!-- Text input-->
+                         <div class="col-md-6 form-group">
+                            <label class="control-label">Task Name</label>
+                            <input type="text" placeholder="Task Name" class="form-control">
+                         </div>
+                         <div class="col-md-6 form-group">
+                            <label class="control-label">Due date</label>
+                            <input type="number" placeholder="Due title" class="form-control">
+                         </div>
+                         <div class="col-md-6 form-group">
+                            <label class="control-label">Description</label>
+                            <input type="text" placeholder="Description" class="form-control">
+                         </div>
+                         <div class="col-md-6 form-group">
+                            <label class="control-label">Assign to</label>
+                            <input type="text" placeholder="Assign to" class="form-control">
+                         </div>
+                         <!-- Text input-->
+                         <div class="col-md-6 form-group">
+                            <label class="control-label">status</label>
+                            <input type="text" placeholder="status" class="form-control">
+                         </div>
+                         <div class="col-md-12 form-group user-form-group">
+                            <div class="pull-right">
+                               <button type="button" class="btn btn-danger btn-sm">Cancel</button>
+                               <button type="submit" class="btn btn-add btn-sm">Update</button>
+                            </div>
+                         </div>
+                      </fieldset>
+                   </form>
+                </div>
+             </div>
+          </div>
+          <div class="modal-footer">
+             <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Close</button>
+          </div>
+       </div>
+       <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+ </div>
+ <!-- /.modal -->
+ <!-- Modal1 -->
+ <div class="modal fade" id="update" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+       <div class="modal-content">
+          <div class="modal-header modal-header-primary">
+             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+             <h3><i class="fa fa-plus m-r-5"></i> Update Info</h3>
+          </div>
+          <div class="modal-body">
+             <div class="row">
+                <div class="col-md-12">
+                   <form class="form-horizontal">
+                      <fieldset>
+                         <!-- Text input-->
+                         <div class="col-md-6 form-group">
+                            <label class="control-label">Task Name</label>
+                            <input type="text" placeholder="Task Name" class="form-control">
+                         </div>
+                         <div class="col-md-6 form-group">
+                            <label class="control-label">Due date</label>
+                            <input type="number" placeholder="Due title" class="form-control">
+                         </div>
+                         <div class="col-md-6 form-group">
+                            <label class="control-label">Description</label>
+                            <input type="text" placeholder="Description" class="form-control">
+                         </div>
+                         <div class="col-md-6 form-group">
+                            <label class="control-label">Assign to</label>
+                            <input type="text" placeholder="Assign to" class="form-control">
+                         </div>
+                         <!-- Text input-->
+                         <div class="col-md-6 form-group">
+                            <label class="control-label">status</label>
+                            <input type="text" placeholder="status" class="form-control">
+                         </div>
+                         <div class="col-md-12 form-group user-form-group">
+                            <div class="pull-right">
+                               <button type="button" class="btn btn-danger btn-sm">Cancel</button>
+                               <button type="submit" class="btn btn-add btn-sm">Update</button>
+                            </div>
+                         </div>
+                      </fieldset>
+                   </form>
+                </div>
+             </div>
+          </div>
+          <div class="modal-footer">
+             <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Close</button>
+          </div>
+       </div>
+       <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+ </div>
+ <!-- /.modal -->
+ <!-- delete user Modal2 -->
+ <div class="modal fade" id="delt" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+       <div class="modal-content">
+          <div class="modal-header modal-header-primary">
+             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+             <h3><i class="fa fa-user m-r-5"></i> Delete task</h3>
+          </div>
+          <div class="modal-body">
+             <div class="row">
+                <div class="col-md-12">
+                   <form class="form-horizontal">
+                      <fieldset>
+                         <div class="col-md-12 form-group user-form-group">
+                            <label class="control-label">Delete task</label>
+                            <div class="pull-right">
+                               <button type="button" class="btn btn-danger btn-sm">NO</button>
+                               <button type="submit" class="btn btn-success btn-sm">YES</button>
+                            </div>
+                         </div>
+                      </fieldset>
+                   </form>
+                </div>
+             </div>
+          </div>
+          <div class="modal-footer">
+             <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Close</button>
+          </div>
+       </div>
+       <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+ </div>
+ <!-- /.modal -->
+{% endblock %}

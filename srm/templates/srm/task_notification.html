@@ -1,0 +1,24 @@
+<li class="dropdown tasks-menu">
+   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+   <i class="pe-7s-note2"></i>
+   <span class="label label-danger">{% if task_count == 0 %}{% else %}{{task_count}}{% endif %}</span>
+   </a>
+   <ul class="dropdown-menu">
+      <li>
+         <div class="slimScrollDiv"><ul class="menu">
+
+           {% for item in task_note %}
+            <li>
+               <!-- Task item -->
+               <a href="{% url 'orders:task_list' %}" class="border-gray">
+                  <span class="label label-success pull-right">{{item.born}}</span>
+                  <h3><i class="fa fa-check-circle"></i>{{item}}</h3>
+               </a>
+            </li>
+            {% endfor %}
+
+            <!-- end task item -->
+         </ul><div class="slimScrollBar"></div><div class="slimScrollRail"></div></div>
+      </li>
+   </ul>
+</li>

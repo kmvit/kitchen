@@ -1,0 +1,18 @@
+{% extends 'srm/base.html' %}
+{% block content %}
+<div class="panel panel-bd lobidisable">
+   <div class="panel-heading">
+      <div class="btn-group" id="buttonexport">
+         <a href="#">
+            <h4>Удалить задачу</h4>
+         </a>
+      </div>
+   </div>
+   <div class="panel-body">
+      <form action="" method="post">{% csrf_token %}
+    <p>Вы уверены, что хотите удалить задачу "{{ object.title}}"?</p>
+    <input type="submit" class="btn btn-add" value="Удалить" />
+</form>
+   </div>
+</div>
+{% endblock %}
