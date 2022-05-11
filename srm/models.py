@@ -1,3 +1,4 @@
+from django.core.validators import RegexValidator
 from django.db import models
 from django.db.models import Sum
 from datetime import datetime
@@ -24,12 +25,14 @@ class City(models.Model):
 
 
 class Contact(models.Model):
-    name = models.CharField(max_length=200)
-    phone = models.CharField(max_length=12, blank=True)
-    city = models.ForeignKey(City, on_delete=models.CASCADE)
-    email = models.EmailField(blank=True)
-    company = models.CharField(max_length=200, blank=True)
-    site = models.CharField(max_length=200, blank=True)
+    name = models.CharField(max_length=200, verbose_name='Имя')
+    regex = RegexValidator(regex=r'^7\d{10}$',
+                           message="Номер клиента в формате 7XXXXXXXXXX (X - номер от 0 до 9)")
+    phone = models.CharField(max_length=11, blank=True, validators=[regex], verbose_name='Номер телефона')
+    city = models.ForeignKey(City, on_delete=models.CASCADE, verbose_name='Город')
+    email = models.EmailField(blank=True, verbose_name='Почта')
+    company = models.CharField(max_length=200, blank=True, verbose_name='Компания')
+    site = models.CharField(max_length=200, blank=True, verbose_name='Сайт')
 
     class Meta:
         verbose_name = 'Контакт'
@@ -52,9 +55,9 @@ class KindofWork(models.Model):
 
 class Deal(models.Model):
     title = models.CharField(max_length=300, verbose_name='Название')
-    kindofwork = models.ForeignKey(KindofWork, on_delete=models.CASCADE)
+    kindofwork = models.ForeignKey(KindofWork, on_delete=models.CASCADE, verbose_name='Что делаем?')
     born = models.DateField(verbose_name='Дата', default=datetime.now)
-    contact = models.ForeignKey(Contact, on_delete=models.CASCADE, verbose_name='Имя')
+    contact = models.ForeignKey(Contact, on_delete=models.CASCADE, verbose_name='Контакт')
     stage = models.ForeignKey(Stage, on_delete=models.CASCADE, verbose_name='Этап')
     prepayment = models.IntegerField(verbose_name='Предоплата', blank=True, null=True)
     budget = models.IntegerField(verbose_name='Бюджет')
@@ -86,7 +89,7 @@ class DealFile(models.Model):
 
 class Task(models.Model):
     title = models.CharField(max_length=300, verbose_name='Название')
-    deal = models.ForeignKey(Deal, on_delete=models.CASCADE)
+    deal = models.ForeignKey(Deal, on_delete=models.CASCADE, verbose_name='Сделка')
     born = models.DateField(verbose_name='Срок завершения', default=datetime.now)
     content = models.TextField(verbose_name='Содержание', blank=True)
     finish = models.BooleanField(verbose_name='Завершено', default=False)

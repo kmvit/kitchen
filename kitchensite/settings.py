@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'portfolio',
     'blog',
     'leads',
+    'crispy_forms',
     'srm',
 ]
 
@@ -214,3 +215,4 @@ CKEDITOR_CONFIGS = {
     }
 }
 
+CRISPY_TEMPLATE_PACK = 'bootstrap3'

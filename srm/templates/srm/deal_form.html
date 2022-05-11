@@ -1,33 +1,18 @@
 {% extends 'srm/base.html' %}
+{% load crispy_forms_tags %}
 {% block content %}
-<div class="col-sm-6 col-md-6">
-<div class="panel panel-bd lobidisable">
-   <div class="panel-heading">
-      <div class="btn-group" id="buttonexport">
-         <a href="#">
-            <h4>Добавить заказ</h4>
-         </a>
-      </div>
-   </div>
-   <div class="panel-body">
-        <form class="form-horizontal" method="POST" action="">
-            {% csrf_token %}
-            <fieldset>
-                {% for field in form %}
-                <div class="col-md-12 form-group">
-                    <label class="control-label">{{field.label_tag}}</label>
-                    <p>{{field}}</p>
+    <div class="col-sm-6 col-md-6">
+        <div class="panel panel-bd lobidisable">
+            <div class="panel-heading">
+                <div class="btn-group" id="buttonexport">
+                    <a href="#">
+                        <h4>Добавить заказ</h4>
+                    </a>
                 </div>
-                {% endfor %}
-                <!-- Text input-->
-                <div class="col-md-12 form-group user-form-group">
-                    <div class="pull-right">
-                        <button type="submit" class="btn btn-add btn-sm">Добавить</button>
-                    </div>
-                </div>
-            </fieldset>
-        </form>
-      </div>
-   </div>
- </div>
+            </div>
+            <div class="panel-body">
+                {% crispy form %}
+            </div>
+        </div>
+    </div>
 {% endblock %}
