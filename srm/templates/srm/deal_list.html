@@ -1,71 +1,79 @@
 {% extends 'srm/base.html' %}
 {% block content %}
-<div class="col-sm-12 col-md-12">
-<div class="panel panel-bd lobidisable">
-   <div class="panel-heading">
-      <div class="btn-group" id="buttonexport">
-         <a href="#">
-            <h4>Заказы</h4>
-         </a>
-      </div>
-   </div>
-   <div class="panel-body">
-      <!-- Plugin content:powerpoint,txt,pdf,png,word,xl -->
-      <div class="btn-group">
-         <div class="buttonexport">
-            <a href="{% url 'orders:order_add'  %}" class="btn btn-add"><i class="fa fa-plus"></i> Добавить заказ</a>
-         </div>
-      </div>
-      <div class="pull-right">
-         <form action="{% url 'orders:order_filter' %}" method="get">
-            <select name="select">
-               <option selected value="all">Все</option>
-               <option value="Успешное завершение">Успешное завершение</option>
-               <option value="Разработка">Разработка</option>
-               <option value="Предоплата">Предоплата</option>
-               <option value="Принимает решение">Принимает решение</option>
-               <option value="Закрыто и не реализовано">Закрыто и не реализовано</option>
-            </select>
-            <button type="submit" class="btn btn-add btn-sm">Фильтровать</button>
-         </form>
-      </div>
-      <!-- ./Plugin content:powerpoint,txt,pdf,png,word,xl -->
-      <div class="table-responsive">
-         <table id="dataTableExample1" class="table table-bordered table-striped table-hover">
-            <thead>
-               <tr class="info">
-                  <th>Название</th>
-                  <th>Клиент</th>
-                  <th>Вид работы</th>
-                  <th>Статус</th>
-                  <th>Начало</th>
-                  <th>Предоплата</th>
-                  <th>Сумма</th>
-                  <th>Действия</th>
-               </tr>
-            </thead>
-            <tbody>
-               {% for item in deal_list %}
-               <tr>
-                  <td><p><a href="{% url 'orders:order_detail' pk=item.id%}">{{item.title}}</a></p><span>{{item.description}}</span></td>
-                  <td><a href="{% url 'orders:contact_detail' pk=item.contact.id%}">{{item.contact}}</a></td>
-                  <td>{{item.kindofwork}}</td>
-                  <td><span class="label {{item.stage.label}} pull-right">{{item.stage}}</span></td>
-                  <td>{{item.born}}</td>
-                  <td>{{item.prepayment}}</td>
-                  <td>{{item.budget}}</td>
-                  <td>
-                     <a class="btn btn-add btn-xs" href="{% url 'orders:order_edit' pk=item.id %}"><i class="fa fa-pencil"></i></a>
-                     <a class="btn btn-danger btn-xs" href="{% url 'orders:order_delete' pk=item.id %}"><i class="fa fa-trash-o"></i> </a>
-                  </td>
-               </tr>
-               {% endfor %}
-            </tbody>
+    <div class="col-sm-12 col-md-12">
+        <div class="panel panel-bd lobidisable">
+            <div class="panel-heading">
+                <div class="btn-group" id="buttonexport">
+                    <a href="#">
+                        <h4>Заказы</h4>
+                    </a>
+                </div>
+            </div>
+            <div class="panel-body">
+                <!-- Plugin content:powerpoint,txt,pdf,png,word,xl -->
+                <div class="btn-group">
+                    <div class="buttonexport">
+                        <a href="{% url 'orders:order_add' %}" class="btn btn-add"><i class="fa fa-plus"></i> Добавить
+                            заказ</a>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <form action="{% url 'orders:order_filter' %}" method="get">
+                        <select name="select">
+                            <option selected value="all">Все</option>
+                            <option value="Успешное завершение">Успешное завершение</option>
+                            <option value="Разработка">Разработка</option>
+                            <option value="Предоплата">Предоплата</option>
+                            <option value="Принимает решение">Принимает решение</option>
+                            <option value="Закрыто и не реализовано">Закрыто и не реализовано</option>
+                        </select>
+                        <button type="submit" class="btn btn-add btn-sm">Фильтровать</button>
+                    </form>
+                </div>
+                <!-- ./Plugin content:powerpoint,txt,pdf,png,word,xl -->
+                <div class="table-responsive">
+                    <table id="dataTableExample1" class="table table-bordered table-striped table-hover">
+                        <thead>
+                        <tr class="info">
+                            <th>Название</th>
+                            <th>Клиент</th>
+                            <th>Вид работы</th>
+                            <th>Статус</th>
+                            <th>Начало</th>
+                            <th>Предоплата</th>
+                            <th>Сумма</th>
+                            <th>Действия</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for item in deal_list %}
+                            <tr>
+                                <td><p><a href="{% url 'orders:order_detail' pk=item.id %}">{{ item.title }}</a></p>
+                                    <span>{{ item.description }}</span></td>
+                                <td>
+                                    <a href="{% url 'orders:contact_detail' pk=item.contact.id %}">{{ item.contact }}</a>
+                                </td>
+                                <td>{{ item.kindofwork }}</td>
+                                <td><span class="label {{ item.stage.label }} pull-right">{{ item.stage }}</span></td>
+                                <td>{{ item.born }}</td>
+                                <td>{{ item.prepayment }}</td>
+                                <td>{{ item.budget }}</td>
+                                <td>
+                                    <a class="btn btn-add btn-xs" href="{% url 'orders:order_edit' pk=item.id %}"><i
+                                            class="fa fa-pencil"></i></a>
+                                    <a class="btn btn-danger btn-xs"
+                                       href="{% url 'orders:order_delete' pk=item.id %}"><i class="fa fa-trash-o"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
 
-         </table>
-           <p>Общая сумма: {{sum.total_sum}} рублей</p>
-      </div>
-   </div>
-</div>
-</div>
+                    </table>
+                    <p>Доход: {{ sum.total_sum }} рублей</p>
+                    <p>Прибыль: {{ total_costs }} рублей</p>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

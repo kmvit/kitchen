@@ -17,7 +17,7 @@ def srm_home(request):
     deal_count = Deal.objects.all().count()
     contact_count = Contact.objects.all().count()
     task_list = Task.objects.filter(finish=False)[:6]
-    deal_list = Deal.objects.filter(stage__title='Разработка', archive=False)
+    deal_list = Deal.objects.filter(stage__title='В процессе', archive=False)
     sum = Deal.objects.all().aggregate(total_sum=Sum('budget'))
     context = {
     'task_list':task_list, 'deal_list':deal_list, 'sum':sum, 'deal_count':deal_count,
@@ -51,7 +51,10 @@ class OrderList(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(OrderList, self).get_context_data(**kwargs)
-        context['sum'] = Deal.objects.all().aggregate(total_sum=Sum('budget'))
+        sum = Deal.objects.all().aggregate(total_sum=Sum('budget'))
+        costs = Deal.objects.all().aggregate(total_sum=Sum('costs__price'))
+        context['sum'] = sum
+        context['total_costs'] = sum['total_sum'] - costs['total_sum']
         return context
 
 
