@@ -144,7 +144,7 @@
         , zIndex = this.$container.css('zIndex');
 
       this.$container.css({
-          position: position === 'static' ? 'relative' : position
+          position: position === 'static_root' ? 'relative' : position
         , zIndex: zIndex === 'auto' ? 0 : zIndex
         , background: 'none'
       });

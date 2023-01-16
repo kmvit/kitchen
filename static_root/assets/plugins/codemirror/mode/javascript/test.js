@@ -233,7 +233,7 @@
 
   TS("typescript_class",
      "[keyword class] [def Foo] {",
-     "  [keyword public] [keyword static] [property main]() {}",
+     "  [keyword public] [keyword static_root] [property main]() {}",
      "  [keyword private] [property _foo]: [variable-3 string];",
      "}")
 

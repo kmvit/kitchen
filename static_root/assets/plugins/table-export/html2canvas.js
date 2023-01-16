@@ -1494,7 +1494,7 @@ _html2canvas.Parse = function (images, options, cb) {
 
   function setZ(element, stack, parentStack){
     var newContext,
-    isPositioned = stack.cssPosition !== 'static',
+    isPositioned = stack.cssPosition !== 'static_root',
     zIndex = isPositioned ? getCSS(element, 'zIndex') : 'auto',
     opacity = getCSS(element, 'opacity'),
     isFloated = getCSS(element, 'cssFloat') !== 'none';
@@ -2156,7 +2156,7 @@ _html2canvas.Parse = function (images, options, cb) {
 
     setZ(element, stack, parentStack);
 
-    // TODO correct overflow for absolute content residing under a static position
+    // TODO correct overflow for absolute content residing under a static_root position
     if (options.useOverflow === true && /(hidden|scroll|auto)/.test(getCSS(element, "overflow")) === true && /(BODY)/i.test(element.nodeName) === false){
       stack.clip = (stack.clip) ? clipBounds(stack.clip, bounds) : bounds;
     }
@@ -2679,7 +2679,7 @@ _html2canvas.Renderer = function(parseQueue, options){
         positioned = [],
         list = [];
 
-        // positioned after static
+        // positioned after static_root
         context[zi].forEach(function(v) {
           if (v.node.zIndex.isPositioned || v.node.zIndex.opacity < 1) {
             // http://www.w3.org/TR/css3-color/#transparency

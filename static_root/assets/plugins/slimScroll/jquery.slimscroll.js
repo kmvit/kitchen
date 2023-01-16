@@ -124,7 +124,7 @@
 
               if ('scrollTo' in options)
               {
-                // jump to a static point
+                // jump to a static_root point
                 offset = parseInt(o.scrollTo);
               }
               else if ('scrollBy' in options)
