@@ -4,7 +4,7 @@
 <title>{{ my_title }}{% if object.meta_title %}{{ object.meta_title }}{% else %}{{ object.title }}{% endif %}</title>
 <meta name="description" content="{{ my_description }}{{ object.meta_description }}">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="yandex-verification" content="034c1c6f3f98a9b7" />
+<meta name="yandex-verification" content="034c1c6f3f98a9b7"/>
 <!-- Favicon -->
 <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/favicon.ico' %}">
 <!-- CSS
@@ -18,7 +18,26 @@
 <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
 <!-- Carrot quest BEGIN -->
 <script type="text/javascript">
-!function(){function t(t,e){return function(){window.carrotquestasync.push(t,arguments)}}if("undefined"==typeof carrotquest){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="//cdn.carrotquest.app/api.min.js",document.getElementsByTagName("head")[0].appendChild(e),window.carrotquest={},window.carrotquestasync=[],carrotquest.settings={};for(var n=["connect","track","identify","auth","oth","onReady","addCallback","removeCallback","trackMessageInteraction"],a=0;a<n.length;a++)carrotquest[n[a]]=t(n[a])}}(),carrotquest.connect("46424-cc95973d52cecebbcbaf9d2daa");
+    !function () {
+        function t(t, e) {
+            return function () {
+                window.carrotquestasync.push(t, arguments)
+            }
+        }
+
+        if ("undefined" == typeof carrotquest) {
+            var e = document.createElement("script");
+            e.type = "text/javascript", e.async = !0, e.src = "//cdn.carrotquest.app/api.min.js", document.getElementsByTagName("head")[0].appendChild(e), window.carrotquest = {}, window.carrotquestasync = [], carrotquest.settings = {};
+            for (var n = ["connect", "track", "identify", "auth", "oth", "onReady", "addCallback", "removeCallback", "trackMessageInteraction"], a = 0; a < n.length; a++) carrotquest[n[a]] = t(n[a])
+        }
+    }(), carrotquest.connect("46424-cc95973d52cecebbcbaf9d2daa");
 </script>
-<script type="text/javascript">!function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src='https://vk.com/js/api/openapi.js?169',t.onload=function(){VK.Retargeting.Init("VK-RTRG-1653096-2dKrB"),VK.Retargeting.Hit()},document.head.appendChild(t)}();</script><noscript><img src="https://vk.com/rtrg?p=VK-RTRG-1653096-2dKrB" style="position:fixed; left:-999px;" alt=""/></noscript>
+<script type="text/javascript">!function () {
+    var t = document.createElement("script");
+    t.type = "text/javascript", t.async = !0, t.src = 'https://vk.com/js/api/openapi.js?169', t.onload = function () {
+        VK.Retargeting.Init("VK-RTRG-1653096-2dKrB"), VK.Retargeting.Hit()
+    }, document.head.appendChild(t)
+}();</script>
+<noscript><img src="https://vk.com/rtrg?p=VK-RTRG-1653096-2dKrB" style="position:fixed; left:-999px;" alt=""/>
+</noscript>
 <!-- Carrot quest END -->

@@ -82,8 +82,7 @@
     Default Styles
 ***************************************/
 /*-- Variables --*/
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,400;0,500;0,700;1,100;1,400;1,500;1,700&display=swap');
-@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,400i,500,500i,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 :root {
   --color-primary: #702FFF;
   --color-primary-alt: #505CFD;
@@ -467,7 +466,7 @@ body {
   line-height: 24px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "Raleway", sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #757589;
   font-weight: 400;
 }
@@ -513,9 +512,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #000248;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 h1 a,
@@ -955,7 +954,7 @@ button.axil-button.axil-link-button::after, .ft-social-share li a, ul.social-sha
 
 ul.mainmenu li a, a.axil-button,
 button.axil-button {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .footer-default .footer-widget-item ul.ft-menu li a, .copyright-default .quick-contact ul li a {
@@ -975,7 +974,7 @@ p:last-child {
 }
 
 .font-1 {
-  font-family: "Raleway", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .font-2 {
@@ -17360,7 +17359,7 @@ Accourdion Style Two
 
 .my_switcher ul li a {
   position: relative;
-  font-family: "Raleway", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   line-height: 22px;
   font-weight: 700;
