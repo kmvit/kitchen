@@ -5,7 +5,7 @@ from .models import Blog, Category
 
 class BlogList(generic.ListView):
 	template_name = 'blog_list.html'
-	queryset = Blog.objects.all()
+	queryset = Blog.objects.all().order_by('-date_born')
 
 	def get_context_data(self, **kwargs):
 		context = super(BlogList, self).get_context_data(**kwargs)
@@ -17,7 +17,7 @@ class BlogList(generic.ListView):
 
 class BlogDetail(generic.DetailView):
 	template_name = 'blog_detail.html'
-	queryset = Blog.objects.all()
+	queryset = Blog.objects.all().order_by('-date_born')
 
 	def get_context_data(self, **kwargs):
 		context = super(BlogDetail, self).get_context_data(**kwargs)
